@@ -12,12 +12,11 @@
 
 <body>
   <h1>Add New {{ cuisines.name }} Cuisine</h1>
-  <form method="POST" enctype="multipart/form-data" class="post-form" action="{% url 'insert' cuisine_id=cuisines.id%}">
+  <form method="POST" enctype="multipart/form-data" class="post-form" action="/dish_insert">
     {% csrf_token %}
     <!-- {{form.as_p}} -->
     <div class="form-group">
       <form method="POST">
-        {{form.image}}
         {{form.as_p}}
         <input type="text" name="cuisine" id="cuisine" value="{{cuisines.id}}">
         <button type="submit">insert</button>

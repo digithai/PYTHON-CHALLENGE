@@ -29,6 +29,7 @@ urlpatterns = [
     path('cuisine_update/<int:id>', views.cuisine_update),
     path('cuisine_delete/<int:id>', views.cuisine_delete),
     path('dish/<int:cuisine_id>', views.dish, name='insert'),
+    path('dish_insert', views.dish),
     path('dish_show/<int:cuisine_id>', views.dish_show, name='display'),
     path('dish_edit/<int:id>', views.dish_edit),
     path('dish_update/<int:id>', views.cuisine_update),

@@ -21,4 +21,5 @@ class DishForm(forms.ModelForm):
             "name",
             "description",
             "image",
+            "cuisine"
         ]
