@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dish</title>
+  {%load static%}
+  <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
+</head>
+
+<body>
+  <h1>Add New {{ cuisines.name }} Cuisine</h1>
+  <form method="POST" enctype="multipart/form-data" class="post-form" action="{% url 'insert' cuisine_id=cuisines.id%}">
+    {% csrf_token %}
+    <!-- {{form.as_p}} -->
+    <div class="form-group">
+      <form method="POST">
+        {{form.image}}
+        {{form.as_p}}
+        <input type="text" name="cuisine" id="cuisine" value="{{cuisines.id}}">
+        <button type="submit">insert</button>
+      </form>
+    </div>
+    <!-- <input type="file" name="document">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" value="{{form.name}}">
+    <label for="description">Description: </label>
+    <input type="text" name="description" id="description" value="{{form.description}}">
+    <input type="text" name="cuisine" id="cuisine" value="{{cuisines.id}}"> -->
+
+
+    <!-- <div class="container">
+      <br />
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <h3>Enter Dish</h3>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-4">{{ form.name }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-4">{{ form.description }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Cuisine</label>
+        <input type="text" value="{{cuisines.id}}" readonly name="cuisine_id">
+        <div class="col-sm-4">{{ cuisines.id }}</div>
+      </div>-->
+    <!-- </div> -->
+  </form>
+</body>
+
+</html>
