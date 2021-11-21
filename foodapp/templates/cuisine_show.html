@@ -15,19 +15,19 @@
   <header class="container">
     <h1>Cuisine</h1>
     <h4>
-      <a href="/cuisine" class="btn btn-primary">Add Cuisine</a>
+      <a href="cuisine/" class="btn btn-primary">Add Cuisine</a>
     </h4>
   </header>
 
   <main>
     {% for cuisine in cuisines %}
     <div class="col">
-      <a href="{% url 'display' cuisine_id=cuisine.id%}" class="card card-3 stacked--up">
+      <a href="{% url 'display' cuisine_id=cuisine.id %}" class="card card-3 stacked--up">
         <div class="content">
           <code class="title">{{cuisine.name}}</code>
         </div>
       </a>
-      <a href="{% url 'insert' cuisine_id=cuisine.id %}" class="btn btn-primary btn-block">Insert Dish</a>
+      <a href="{% url 'insert' cuisine_id=cuisine.id%}" class="btn btn-primary btn-block">Insert Dish</a>
     </div>
     {% endfor %}
   </main>    

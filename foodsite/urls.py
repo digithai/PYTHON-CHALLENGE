@@ -23,17 +23,9 @@ from django.conf import settings
 urlpatterns = [
     path('', views.cuisine_show, name='home'),
     path('admin/', admin.site.urls),
-    path('cuisine', views.cuisine),
-    path('cuisine_show', views.cuisine_show),
-    path('cuisine_edit/<int:id>', views.cuisine_edit),
-    path('cuisine_update/<int:id>', views.cuisine_update),
-    path('cuisine_delete/<int:id>', views.cuisine_delete),
-    path('dish/<int:cuisine_id>', views.dish, name='insert'),
-    path('dish_insert', views.dish),
+    path('cuisine/', views.cuisine),
     path('dish_show/<int:cuisine_id>', views.dish_show, name='display'),
-    path('dish_edit/<int:id>', views.dish_edit),
-    path('dish_update/<int:id>', views.cuisine_update),
-    path('dish_delete/<int:id>', views.dish_delete),
+    path('insert_dish/<int:cuisine_id>',views.insert_dish, name='insert')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

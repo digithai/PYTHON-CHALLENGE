@@ -9,6 +9,6 @@ class Cuisine(models.Model):
 class Dish(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='images/')
 
     cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, related_name='display')

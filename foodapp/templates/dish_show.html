@@ -12,13 +12,15 @@
 
 <body>
     <header class="container">
-        <h1>Dish</h1>
+        <h1>{{ display.cuisine.name }} Dish</h1>
+        <a href="{% url 'home'%}">Go to home</a>
     </header>
     <main>
         {% for dish in cuisine.display.all%}
         <div class="col">
             <div class="card card-3 stacked--up">
                 <div class="content">
+                    <img src="{{dish.image.url}}" alt="{{dish.name}}" width="100px">
                     <h1>{{dish.name}}</h1>
                     <h3>{{dish.description}}</h3>
                 </div>
