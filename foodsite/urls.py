@@ -25,7 +25,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cuisine/', views.cuisine),
     path('dish_show/<int:cuisine_id>', views.dish_show, name='display'),
-    path('insert_dish/<int:cuisine_id>',views.insert_dish, name='insert')
+    path('insert_dish/<int:cuisine_id>',views.insert_dish, name='insert'),
+    path('update_cuisine/<int:id>',views.update_cuisine, name='update_cuisine'),
+    path('update_dish/<int:id>', views.update_dish, name='update_dish'),
+    path('<id>/delete_dish', views.delete_dish, name='delete_dish'),
+    path('<id>/delete_cuisine', views.delete_cuisine, name='delete_cuisine'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

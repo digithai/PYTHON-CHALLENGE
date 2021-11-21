@@ -23,6 +23,8 @@
                     <img src="{{dish.image.url}}" alt="{{dish.name}}" width="100px">
                     <h1>{{dish.name}}</h1>
                     <h3>{{dish.description}}</h3>
+                    <a href="{% url 'update_dish' id=dish.id%}">Update</a>
+                    <a href="{% url 'delete_dish' id=dish.id %}">Delete</a>
                 </div>
             </div>
         </div>

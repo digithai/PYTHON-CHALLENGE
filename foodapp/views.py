@@ -44,15 +44,32 @@ def insert_dish(request, cuisine_id):
                 pass    
     return render(request, 'dish.html', {'cuisine':cuisines, 'form':form})
 
-def dish_insert(request):
+def update_cuisine(request, id):
+    cuisine = Cuisine.objects.get(id=id)
+    form = CuisineForm(request.POST or None, instance=cuisine)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'cuisine_update.html', {'form':form})
+
+def update_dish(request, id):
+    dish = Dish.objects.get(id=id)
+    form = DishForm(request.POST or None, instance=dish)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'dish_update.html', {'form':form})
+
+def delete_dish(request, id):
+    dish = Dish.objects.get(id=id)
     if request.method == "POST":
-        form = DishForm(request.POST, request.FILES)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('/cuisine_show')
-            except:
-                pass
-    else:
-        form = DishForm()
-    return render(request, 'dish.html',{'form':form})
+        dish.delete()
+        return redirect('/')
+    return render(request, "dish_delete.html")
+
+def delete_cuisine(request, id):
+    cuisine = Cuisine.objects.get(id=id)
+    if request.method == "POST":
+        cuisine.delete()
+        return redirect('/')
+    return render(request, "cuisine_delete.html")

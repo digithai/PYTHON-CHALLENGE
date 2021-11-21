@@ -28,6 +28,8 @@
         </div>
       </a>
       <a href="{% url 'insert' cuisine_id=cuisine.id%}" class="btn btn-primary btn-block">Insert Dish</a>
+      <a href="{% url 'update_cuisine' id=cuisine.id%}" class="btn btn-primary btn-block">Update</a>
+      <a href="{% url 'delete_cuisine' id=cuisine.id%}" class="btn btn-primary btn-block">Delete</a>
     </div>
     {% endfor %}
   </main>    
