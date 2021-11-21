@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuisine</title>
+  {%load static%}
+  <!-- <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" /> -->
+  <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+</head>
+
+<body>
+  <header class="container">
+    <h1>Cuisine</h1>
+    <h4>
+      <a href="cuisine/" class="btn btn-primary">Add Cuisine</a>
+    </h4>
+  </header>
+
+  <main>
+    {% for cuisine in cuisines %}
+    <div class="col">
+      <a href="{% url 'display' cuisine_id=cuisine.id %}" class="card card-3 stacked--up">
+        <div class="content">
+            <code class="title">{{cuisine.name}}</code>
+        </div>
+      </a>
+      <a href="{% url 'insert' cuisine_id=cuisine.id%}" class="btn btn-primary btn-block">Insert Dish</a>
+      <a href="{% url 'update_cuisine' id=cuisine.id%}" class="btn btn-primary btn-block">Update</a>
+      <a href="{% url 'delete_cuisine' id=cuisine.id%}" class="btn btn-primary btn-block">Delete</a>
+    </div>
+    {% endfor %}
+  </main>    
+</body>
+
+</html>

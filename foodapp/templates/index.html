@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuisine</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                <h1 class="display-4 py-2 text-truncate">Add Cuisine</h1>
+                <div class="px-2">
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        <div class="container" style="align-content: center;">
+                            <br />
+                            <div class="form-group row">
+                                {{form.as_p}}
+                            </div><br>
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">Insert</button>
+                            </div><br>
+                            <div class="form-group row">                                
+                                <a href="/" class="btn btn-primary">Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
