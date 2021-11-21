@@ -17,10 +17,11 @@
     </header>
     <main>
         {% for dish in cuisine.display.all%}
+        
         <div class="col">
             <div class="card card-3 stacked--up">
                 <div class="content">
-                    <img src="{{dish.image.url}}" alt="{{dish.name}}" width="100px">
+                    <img src="{{dish.image.url}}" alt="{{dish.name}}" width="300px">
                     <h1>{{dish.name}}</h1>
                     <h3>{{dish.description}}</h3>
                     <a href="{% url 'update_dish' id=dish.id%}">Update</a>
@@ -30,50 +31,5 @@
         </div>
         {%endfor%}
     </main>
-
-    <!-- <a href="{% url 'home' %}">Go back</a>
-    <table class="table table-striped table-bordered table-sm">
-        <thead class="thead-dark">
-            <tr>
-                <th>name</th>
-                <th>description</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for dish in cuisine.display.all %}
-                <tr>
-                    <td>{{dish.name}}</td>
-                    <td>{{dish.description}}</td>
-                    <td>
-                        <a href="/dish_edit/{{ dish.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
-                        <a href="/dish_delete/{{ dish.id }}">Delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table> -->
-    <!-- <table class="table table-striped table-bordered table-sm">
-        <thead class="thead-dark">
-            <tr>
-                <th>name</th>
-                <th>description</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for dish in dishes %}
-            <tr>
-                <td>{{dish.name}}</td>
-                <td>{{dish.discription}}</td>
-                <td>
-                    <a href="/dish_edit/{{ dish.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
-                    <a href="/dish_delete/{{ dish.id }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table> -->
 </body>
-
 </html>

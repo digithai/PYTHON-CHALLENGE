@@ -35,7 +35,8 @@ def insert_dish(request, cuisine_id):
         return render(request, 'dish.html',{'cuisine':cuisines, 'form':form})
         # return render((request, 'dish.html',{'cuisine':cuisines,'form':form}))
     if request.method == "POST":
-        form = DishForm(request.POST, files=request.FILES)
+        form = DishForm(request.POST, files=request.FILES )
+        
         if form.is_valid():
             try:
                 form.save()

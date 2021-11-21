@@ -11,19 +11,30 @@
 </head>
 
 <body>
-    <form method="POST" class="post-form">
-        {% csrf_token %}
-        <div class="container" style="align-content: center;">
-            <br />
-            <div class="form-group row">
-                <label class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                <h1 class="display-4 py-2 text-truncate">Add Cuisine</h1>
+                <div class="px-2">
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        <div class="container" style="align-content: center;">
+                            <br />
+                            <div class="form-group row">
+                                {{form.as_p}}
+                            </div><br>
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">Insert</button>
+                            </div><br>
+                            <div class="form-group row">                                
+                                <a href="/" class="btn btn-primary">Back</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                {{form.as_p}}
-                <button type="submit" class="btn btn-primary">Insert</button>
             </div>
         </div>
-    </form>
+    </div>
 </body>
 
 </html>

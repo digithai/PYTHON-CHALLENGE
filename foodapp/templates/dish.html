@@ -11,16 +11,35 @@
 </head>
 
 <body>
-  <h1>Add New {{ cuisine.name }} Cuisine</h1>
-  <form method="POST" enctype="multipart/form-data" class="post-form">
-    {% csrf_token %}
-    <div class="form-group">
-      <form method="POST">
-        {{form.as_p}}
-        <button type="submit">insert</button>
-      </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+        <h1 class="display-4 py-2">Add New {{ cuisine.name }} Dish</h1>
+        <div class="px-2">
+          <form method="post" class="justify-content-center" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+              <label class="sr-only">Name</label>
+              {{form.name}}
+            </div>
+            <div class="form-group">
+              <label class="sr-only">Description</label>
+              {{form.description}}
+            </div>
+            <div class="form-group">
+              {{form.image}}
+            </div>
+            <div class="form-group">
+              {{form.cuisine}}
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <a href="/" class="btn btn-primary btn-lg">Cancel</a>
+          </form>
+        </div>
+      </div>
     </div>
-  </form>
+  </div>
 </body>
 
 </html>
