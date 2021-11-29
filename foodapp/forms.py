@@ -17,9 +17,5 @@ class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
 
-        fields = [
-            "name",
-            "description",
-            "image",
-            "cuisine"
-        ]
+        fields = '__all__'
+        exclude = ['cuisine']
